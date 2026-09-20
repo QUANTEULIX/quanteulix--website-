@@ -19,6 +19,9 @@ export default function Ust_baslik() {
 
             <nav className="flex justify-center items-center gap-3">
                 <button className="rounded px-4 py-2 hover:bg-gray-700">
+                    Ana Sayfa
+                </button>
+                <button className="rounded px-4 py-2 hover:bg-gray-700">
                     Hakkımızda
                 </button>
 
