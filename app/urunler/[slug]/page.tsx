@@ -56,12 +56,26 @@ export default async function UrunDetayPage({ params }: UrunDetayPageProps) {
                     </div>
                     <div className="productDetailCopy">
                         <p className="productCategory">ÜRÜN HAKKINDA</p>
-                        <h2>{urun.isim} ile çalışmalarınızı keşfedin.</h2>
+                        <h2>{urun.isim} çalışmalarınızı keşfedin.</h2>
                         <p>{urun.detay}</p>
                         <Link className="productBackLink" href="/urunler">
                             <span aria-hidden="true">&lt;-</span> Tüm ürünlere dön
                         </Link>
                     </div>
+                </div>
+            </section>
+
+
+
+
+            <section className="section productDetailSection">
+                <div className="container productDetail">
+
+                    <div className="productDetailCopy">
+                        <h2>Ürün özellikleri:</h2>
+                    </div>
+
+
                 </div>
             </section>
         </main>

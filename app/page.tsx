@@ -19,24 +19,22 @@ export default function Home() {
             <p className="eyebrow">2026</p>
             <h1>QUANTEULIX</h1>
             <p>
-              Kısa bir alt söz veya yaklaşımınızı anlatan tek cümlelik metni bu
-              alana yazabilirsiniz.
+              Kısa bir alt söz veya yaklaşımınızı anlatan tek cümlelik metin.
             </p>
           </div>
 
           <div className="signatureProject">
             <div className="projectImagePlaceholder" role="img" aria-label="İmza proje görseli için yer tutucu">
               <div className="projectFrame">
-                <span>İMZA PROJE GÖRSELİ</span>
-                <small>Fotoğrafınızı buraya ekleyin</small>
+                <span>İMZA PROJE GÖRSELİ koycaz buraya</span>
+                <small>Fotoğrafı koyulacak yer</small>
               </div>
             </div>
             <div className="projectDescription">
-              <p className="eyebrow">İMZA PROJE</p>
-              <h2>Proje adınızı buraya ekleyin.</h2>
+              <p className="eyebrow">İMZA PROJEMİZ</p>
+              <h2>Polarizasyon Tabanlı Kuantum Mantık Demansistörü</h2>
               <p>
-                Bu alanı, öne çıkarmak istediğiniz projenin ne yaptığını kısa
-                ve anlaşılır biçimde anlatmak için kullanabilirsiniz.
+                Bu alanı öne çıkarmak istediğimiz projenin ne yaptığını kısaca anlatmak için kullanak.
               </p>
             </div>
           </div>

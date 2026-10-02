@@ -20,17 +20,16 @@ export default function Iletisim() {
           <article className="contentCard">
             <p className="cardLabel">E-POSTA</p>
             <h2>info@quanteulix.com</h2>
-            <p className="placeholderText">E-posta adresinizi buradan güncelleyebilirsiniz.</p>
           </article>
           <article className="contentCard">
             <p className="cardLabel">KONUM</p>
             <h2>Konum bilgisi ekleyin.</h2>
-            <p className="placeholderText">Ofis, laboratuvar veya çalışma alanı bilgilerinizi bu kutuya ekleyebilirsiniz.</p>
+            <p className="placeholderText">Ofis, laboratuvar veya çalışma alanı olursa burayı kullanırız.</p>
           </article>
           <article className="contentCard">
             <p className="cardLabel">SOSYAL MEDYA</p>
-            <h2>Bağlantılarınızı ekleyin.</h2>
-            <p className="placeholderText">LinkedIn, Instagram veya diğer sosyal medya bağlantılarınızı bu alana ekleyebilirsiniz.</p>
+            <h2>...</h2>
+            <p className="placeholderText">LinkedIn, Instagram diğer sosyal medya bağlantılarınızı bu alana ekleyebilirsiniz.</p>
           </article>
         </div>
       </section>

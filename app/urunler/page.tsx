@@ -12,7 +12,7 @@ export default function Urunler() {
         <main>
             <section className="pageHero">
                 <div className="container narrow">
-                    <p className="eyebrow">ÜRÜN EKOSİSTEMİ</p>
+                    <p className="eyebrow">ÜRÜNLER (ÜRÜN EKOSİSTEMİ)</p>
                     <h1>Araştırmadan uygulamaya.</h1>
                     <p>Araştırma, eğitim ve deneysel çalışmalar için geliştirdiğimiz sistemleri keşfedin.</p>
                 </div>
