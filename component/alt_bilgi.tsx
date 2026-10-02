@@ -1,28 +1,27 @@
-import {FaInstagram,FaPhone} from "react-icons/fa";
-import {SiGmail} from "react-icons/si";
+import Link from "next/link";
 
-export default function Alt_bilgi() {
-    return (
-        <footer className="grid grid-cols-3 items-center bg-gray-800 px-8 py-4 text-white">
-            <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-bold">İletişim</h3>
-                <a href="tel:+90" className="flex items-center gap-2">
-                    <FaPhone />
-                </a>
-                <a href="mailto:quanteulix@gmail.com" className="flex items-center gap-2">
-                    <SiGmail />
-                </a>
-                <a href="https://www.instagram.com/quanteulix/" className="flex items-center gap-2">
-                    <FaInstagram /> 
-                </a>
-            </div>
-
-            <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-bold">Telif Hakkı</h3>
-                <p>
-                    QUANTEULIX 2026 Tüm hakları saklıdır.
-                </p>
-            </div>
-        </footer>
-    )
+export default function AltBilgi() {
+  return (
+    <footer className="siteFooter">
+      <div className="container footerGrid">
+        <div>
+          <p className="footerBrand">QUANTEULIX</p>
+          <p className="footerDescription">Kuantum teknolojileri ve ileri mühendislik için yeni nesil çözümler.</p>
+        </div>
+        <div>
+          <p className="footerHeading">Keşfedin</p>
+          <div className="footerLinks">
+            <Link href="/urunler">Ürünler</Link>
+            <Link href="/hakkimizda">Hakkımızda</Link>
+            <Link href="/iletisim">İletişim</Link>
+          </div>
+        </div>
+        <div>
+          <p className="footerHeading">İletişim</p>
+          <a className="footerEmail" href="mailto:info@quanteulix.com">info@quanteulix.com</a>
+        </div>
+      </div>
+      <div className="container footerBottom">© 2026 Quanteulix. Tüm hakları saklıdır.</div>
+    </footer>
+  );
 }

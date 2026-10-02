@@ -1,44 +1,41 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type UrunProps = {
+    slug: string;
     isim: string;
     aciklama: string;
     resim: string;
+    kategori: string;
 };
 
 export default function Urun({
+    slug,
     isim,
     aciklama,
     resim,
+    kategori,
 }: UrunProps) {
     return (
-        <article className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-
-            {/* Ürün görseli */}
-            <div className="relative flex h-56 items-center justify-center bg-gray-50 p-6">
-                <Image
-                    src={resim}
-                    alt={isim}
-                    fill
-                    className="object-contain p-6 transition duration-300 group-hover:scale-105"
-                />
-            </div>
-
-            {/* Ürün bilgileri */}
-            <div className="p-6">
-                <h2 className="text-xl font-semibold text-gray-900">
-                    {isim}
-                </h2>
-
-                <p className="mt-2 text-sm leading-6 text-gray-600">
-                    {aciklama}
-                </p>
-
-                <button className="mt-5 font-medium text-blue-600 transition hover:text-blue-800">
-                    Detayları Gör →
-                </button>
-            </div>
-
-        </article>
+        <Link className="productCardLink" href={`/urunler/${slug}`}>
+            <article className="productCard">
+                <div className="productVisual">
+                    <span className="productGrid" aria-hidden="true" />
+                    <Image
+                        src={resim}
+                        alt={`${isim} ürün görseli`}
+                        fill
+                        sizes="(max-width: 760px) 100vw, (max-width: 1080px) 50vw, 33vw"
+                        className="productImage"
+                    />
+                </div>
+                <div className="productBody">
+                    <p className="productCategory">{kategori}</p>
+                    <h2>{isim}</h2>
+                    <p>{aciklama}</p>
+                    <span className="productStatus">Ürünü incele <span aria-hidden="true">-&gt;</span></span>
+                </div>
+            </article>
+        </Link>
     );
 }
