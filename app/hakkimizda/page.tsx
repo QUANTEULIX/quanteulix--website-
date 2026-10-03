@@ -19,8 +19,7 @@ export default function Hakkimizda() {
         <div className="container aboutGrid">
           <article className="contentCard contentCardWide">
             <p className="cardLabel">HAKKIMIZDA</p>
-            <h2>Quant Eulix; mevcut küresel konumlama altyapılarını optik veriyle destekleyerek hassasiyeti ve kararlılığı üst seviyeye çıkaran kuantum optik seyrüsefer sistemleri ve entegre elektro-optik algılama çözümleri üzerine odaklanmaktadır. Teorik fiziği otonom platform gereksinimleriyle harmanlayan şirketimiz; otonomi, savunma ve kritik algılama alanlarında daha hassas ve güvenilir geleceğin teknolojilerini inşa etmeyi hedeflemektedir.</h2>
-            <p className="placeholderText">Bu alanı Quanteulix&apos;in kuruluş hikâyesi, ekibi, uzmanlığı ve sunduğu değer hakkında kısa bir metinle doldurabilirsiniz.</p>
+            <p className="placeholderText">Quant Eulix; mevcut küresel konumlama altyapılarını optik veriyle destekleyerek hassasiyeti ve kararlılığı üst seviyeye çıkaran kuantum optik seyrüsefer sistemleri ve entegre elektro-optik algılama çözümleri üzerine odaklanmaktadır. Teorik fiziği otonom platform gereksinimleriyle harmanlayan şirketimiz; otonomi, savunma ve kritik algılama alanlarında daha hassas ve güvenilir geleceğin teknolojilerini inşa etmeyi hedeflemektedir.</p>
           </article>
           <article className="contentCard">
             <p className="cardLabel">MİSYONUMUZ</p>
