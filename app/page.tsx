@@ -21,7 +21,7 @@ export default function Home() {
               şuanda bakımda yapım aşamasında olan bir web sitesidir.
             </h1>
             <p>
-              Kısa bir alt söz veya yaklaşımınızı anlatan tek cümlelik metin.
+              GELECEĞİN TEKNOLOJİSİNİN BİR PARÇACIĞI.
             </p>
           </div>
 
