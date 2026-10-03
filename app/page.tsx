@@ -17,7 +17,9 @@ export default function Home() {
 
           <div className="heroMessage">
             <p className="eyebrow">2026</p>
-            <h1>QUANTEULIX</h1>
+            <h1>QUANTEULIX
+              şuanda bakımda yapım aşamasında olan bir web sitesidir.
+            </h1>
             <p>
               Kısa bir alt söz veya yaklaşımınızı anlatan tek cümlelik metin.
             </p>
