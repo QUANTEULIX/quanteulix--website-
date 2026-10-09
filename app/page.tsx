@@ -26,11 +26,15 @@ export default function Home() {
           </div>
 
           <div className="signatureProject">
-            <div className="projectImagePlaceholder" role="img" aria-label="İmza proje görseli için yer tutucu">
-              <div className="projectFrame">
-                <span>İMZA PROJE GÖRSELİ koycaz buraya</span>
-                <small>Fotoğrafı koyulacak yer</small>
-              </div>
+            <div className="projectVisual">
+              <Image
+                src="/images/prototip_1.jpeg"
+                alt="Polarizasyon tabanlı kuantum mantık devresi prototipi"
+                width={1364}
+                height={597}
+                unoptimized
+                priority
+              />
             </div>
             <div className="projectDescription">
               <p className="eyebrow">İMZA PROJEMİZ</p>

@@ -1,32 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Product } from "@/data/products";
 
-type UrunProps = {
-    slug: string;
-    isim: string;
-    aciklama: string;
-    resim: string;
-    kategori: string;
-};
+type ProductCardProps = Pick<Product, "slug" | "isim" | "aciklama" | "resim" | "kategori">;
 
-export default function Urun({
+export default function ProductCard({
     slug,
     isim,
     aciklama,
     resim,
     kategori,
-}: UrunProps) {
+}: ProductCardProps) {
     return (
         <Link className="productCardLink" href={`/urunler/${slug}`}>
             <article className="productCard">
                 <div className="productVisual">
-                    <span className="productGrid" aria-hidden="true" />
                     <Image
                         src={resim}
                         alt={`${isim} ürün görseli`}
                         fill
                         sizes="(max-width: 760px) 100vw, (max-width: 1080px) 50vw, 33vw"
                         className="productImage"
+                        unoptimized
                     />
                 </div>
                 <div className="productBody">

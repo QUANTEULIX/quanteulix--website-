@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { urunler } from "../urun-data";
-import HitboxDiagram from "@/component/hitboxdiagrami";
+import { urunler } from "@/data/products";
+import HitboxDiagram from "@/components/products/HitboxDiagram";
+import PcbShowcase from "@/components/products/PcbShowcase";
 
 type UrunDetayPageProps = {
     params: Promise<{ slug: string }>;
@@ -60,6 +61,7 @@ export default async function UrunDetayPage({
                             alt={`${urun.isim} ürün görseli`}
                             fill
                             sizes="(max-width: 760px) 100vw, 50vw"
+                            unoptimized
                             priority
                         />
                     </div>
@@ -88,24 +90,34 @@ export default async function UrunDetayPage({
                 </div>
             </section>
 
-            <section className="section productDetailSection">
-                <div className="width-full flex justify-center">
-                    <div className="w-300">
-                        <p>
-                            Ürünün konum üretebilmesi için yüksek
-                            hassasiyette ölçüm yapması ve bu ölçümü
-                            yüksek hassasiyetle veriye çevirmesi
-                            gerekmektedir. Prototip-1, gerekli
-                            hassasiyete modülde ulaşılabilirliği
-                            test ettiğimiz prototiptir. Prototipte
-                            polarizasyon verilerinden açı bilgisi
-                            üretmek hedeflenmiştir.
-                        </p>
-
+            {urun.teknikAciklama && (
+                <section className="section sectionSoft technicalSection">
+                    <div className="container technicalContent">
+                        <div className="sectionIntro">
+                            <p className="eyebrow">SİSTEM MİMARİSİ</p>
+                            <h2>Ölçümden açı bilgisine uzanan akış.</h2>
+                            <p>{urun.teknikAciklama}</p>
+                        </div>
                         <HitboxDiagram />
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
+
+            {urun.pcbs && urun.pcbs.length > 0 && (
+                <section className="section pcbSection">
+                    <div className="container">
+                        <div className="sectionIntro">
+                            <p className="eyebrow">ELEKTRONİK KARTLAR</p>
+                            <h2>Her kartı 3 boyutta inceleyin.</h2>
+                            <p>
+                                Kartı sürükleyerek tüm yüzeylerini inceleyebilir,
+                                altındaki açıklamadan sistemdeki görevini görebilirsiniz.
+                            </p>
+                        </div>
+                        <PcbShowcase boards={urun.pcbs} />
+                    </div>
+                </section>
+            )}
         </main>
     );
 }

@@ -1,6 +1,6 @@
-import Urun from "../../component/urun";
+import ProductCard from "@/components/products/ProductCard";
+import { urunler } from "@/data/products";
 import type { Metadata } from "next";
-import { urunler } from "./urun-data";
 
 export const metadata: Metadata = {
     title: "Ürünler",
@@ -19,7 +19,7 @@ export default function Urunler() {
             </section>
             <section className="section productSection">
                 <div className="container productGrid">
-                    {urunler.map((urun) => <Urun key={urun.id} {...urun} />)}
+                    {urunler.map((urun) => <ProductCard key={urun.id} {...urun} />)}
                 </div>
             </section>
         </main>
