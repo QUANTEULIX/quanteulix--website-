@@ -14,6 +14,7 @@ export type Product = {
     detay: string;
     resim: string;
     teknikAciklama?: string;
+    schematicImage?: string;
     pcbs?: PcbModel[];
 };
 
@@ -29,14 +30,15 @@ export const urunler: Product[] = [
             "QUANTEULIX Q1, polarizasyon tabanlı kuantum deneylerini araştırma ve eğitim çalışmalarına taşımak için tasarlanmış bir demonstratör sistemidir.",
         resim: "/images/prototip_1.jpeg",
         teknikAciklama:
-            "Sistem, polarizasyon verilerinden açı bilgisi üretebilmek için yüksek hassasiyetli optik ve elektronik ölçüm katmanlarını birlikte kullanır. Aşağıdaki kartlar prototipin ölçüm, kontrol ve bağlantı işlevlerini temsil eder.",
+            "Ürünün konum üretebilmesi için yüksek hassasiyetli ölçüm yapması ve bu ölçümü veriye dönüştürmesi gerekir. Prototip-1, gerekli ölçüm hassasiyetine modül düzeyinde ulaşılabilirliği test eder. Prototipte polarizasyon verilerinden açı bilgisi üretilmesi hedeflenmiştir.",
+        schematicImage: "/anakart_1.png",
         pcbs: [
             {
                 id: "olcum-karti",
                 title: "Ölçüm kartı",
                 description:
                     "Fotodiyotlardan gelen analog sinyalleri toplar, yükseltir ve sayısallaştırma katmanına iletir.",
-                modelUrl: "/PCB12.glb",
+                modelUrl: "/ntc.glb",
             },
             {
                 id: "kontrol-karti",

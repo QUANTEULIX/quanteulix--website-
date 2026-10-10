@@ -12,14 +12,14 @@ export default function Hakkimizda() {
         <div className="container narrow">
           <p className="eyebrow">KURUMSAL</p>
           <h1>Bilim, tasarım ve mühendisliğin kesişiminde.</h1>
-          <p>Quanteulix&apos;in hikâyesini, çalışma yaklaşımını ve hedeflerini bu sayfada paylaşabilirsiniz.</p>
+          <p>Kuantum optik ve elektro-optik algılama sistemleri üzerine araştırma ve geliştirme çalışmaları yürütüyoruz.</p>
         </div>
       </section>
       <section className="section aboutSection">
         <div className="container aboutGrid">
           <article className="contentCard contentCardWide">
             <p className="cardLabel">HAKKIMIZDA</p>
-            <p className="placeholderText">Quant Eulix; mevcut küresel konumlama altyapılarını optik veriyle destekleyerek hassasiyeti ve kararlılığı üst seviyeye çıkaran kuantum optik seyrüsefer sistemleri ve entegre elektro-optik algılama çözümleri üzerine odaklanmaktadır. Teorik fiziği otonom platform gereksinimleriyle harmanlayan şirketimiz; otonomi, savunma ve kritik algılama alanlarında daha hassas ve güvenilir geleceğin teknolojilerini inşa etmeyi hedeflemektedir.</p>
+            <p className="placeholderText">Quanteulix, mevcut küresel konumlama altyapılarını optik veriyle destekleyerek hassasiyeti ve kararlılığı üst seviyeye çıkaran kuantum optik seyrüsefer sistemleri ve entegre elektro-optik algılama çözümleri üzerine odaklanmaktadır. Teorik fiziği otonom platform gereksinimleriyle harmanlayan şirketimiz; otonomi, savunma ve kritik algılama alanlarında daha hassas ve güvenilir geleceğin teknolojilerini inşa etmeyi hedeflemektedir.</p>
           </article>
           <article className="contentCard">
             <p className="cardLabel">MİSYONUMUZ</p>
@@ -34,4 +34,3 @@ export default function Hakkimizda() {
     </main>
   );
 }
-

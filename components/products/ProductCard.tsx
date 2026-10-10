@@ -11,10 +11,12 @@ export default function ProductCard({
     resim,
     kategori,
 }: ProductCardProps) {
+    const isFeaturedProduct = slug === "quanteulix-q1";
+
     return (
         <Link className="productCardLink" href={`/urunler/${slug}`}>
             <article className="productCard">
-                <div className="productVisual">
+                <div className={`productVisual${isFeaturedProduct ? " productVisualFeatured" : ""}`}>
                     <Image
                         src={resim}
                         alt={`${isim} ürün görseli`}

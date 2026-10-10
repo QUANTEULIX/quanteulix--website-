@@ -12,24 +12,20 @@ export default function Iletisim() {
         <div className="container narrow">
           <p className="eyebrow">İLETİŞİM</p>
           <h1>Birlikte yeni olasılıkları keşfedelim.</h1>
-          <p>iletişim bilgileri gelcek buraya</p>
+          <p>Ürünlerimiz ve çalışmalarımız hakkında bilgi almak için bize e-posta gönderebilirsiniz.</p>
         </div>
       </section>
       <section className="section contactSection">
         <div className="container contactGrid">
           <article className="contentCard">
             <p className="cardLabel">E-POSTA</p>
-            <h2>info@quanteulix.com</h2>
-          </article>
-          <article className="contentCard">
-            <p className="cardLabel">KONUM</p>
-            <h2>Konum bilgisi ekleyin.</h2>
-            <p className="placeholderText">Ofis, laboratuvar veya çalışma alanı olursa burayı kullanırız.</p>
-          </article>
-          <article className="contentCard">
-            <p className="cardLabel">SOSYAL MEDYA</p>
-            <h2>...</h2>
-            <p className="placeholderText">LinkedIn, Instagram diğer sosyal medya bağlantılarınızı bu alana ekleyebilirsiniz.</p>
+            <h2>
+              <a href="mailto:info@quanteulix.com">info@quanteulix.com</a>
+            </h2>
+            <p className="placeholderText">
+              Mesajınızı e-posta ile iletin; ekibimiz en kısa sürede size dönüş
+              yapsın.
+            </p>
           </article>
         </div>
       </section>

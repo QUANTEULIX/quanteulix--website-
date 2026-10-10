@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { urunler } from "@/data/products";
+import BoardInspection from "@/components/products/BoardInspection";
 import HitboxDiagram from "@/components/products/HitboxDiagram";
-import PcbShowcase from "@/components/products/PcbShowcase";
 
 type UrunDetayPageProps = {
     params: Promise<{ slug: string }>;
@@ -71,9 +71,7 @@ export default async function UrunDetayPage({
                             ÜRÜN HAKKINDA
                         </p>
 
-                        <h2>
-                            {urun.isim} çalışmalarınızı keşfedin.
-                        </h2>
+                        <h2>Sistemi yakından tanıyın.</h2>
 
                         <p>{urun.detay}</p>
 
@@ -103,18 +101,18 @@ export default async function UrunDetayPage({
                 </section>
             )}
 
-            {urun.pcbs && urun.pcbs.length > 0 && (
-                <section className="section pcbSection">
+            {urun.pcbs?.[0] && urun.schematicImage && (
+                <section className="section sectionSoft boardInspectionSection">
                     <div className="container">
                         <div className="sectionIntro">
                             <p className="eyebrow">ELEKTRONİK KARTLAR</p>
-                            <h2>Her kartı 3 boyutta inceleyin.</h2>
-                            <p>
-                                Kartı sürükleyerek tüm yüzeylerini inceleyebilir,
-                                altındaki açıklamadan sistemdeki görevini görebilirsiniz.
-                            </p>
+                            <h2>Şematik ve 3B görünüm</h2>
+
                         </div>
-                        <PcbShowcase boards={urun.pcbs} />
+                        <BoardInspection
+                            board={urun.pcbs[0]}
+                            schematicUrl={urun.schematicImage}
+                        />
                     </div>
                 </section>
             )}

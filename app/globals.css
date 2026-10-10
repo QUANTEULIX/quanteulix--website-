@@ -415,16 +415,26 @@ a:focus-visible {
   position: relative;
   height: clamp(250px, 24vw, 300px);
   overflow: hidden;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
   background:
     radial-gradient(circle at 50% 45%, #fff 0, #f4f9fc 66%, #e9f3fa 100%);
 }
 
 .productImage {
-  position: relative !important;
   z-index: 1;
   padding: 16px;
+  border-radius: 18px;
   object-fit: contain;
   transition: filter 180ms ease;
+}
+
+.productVisualFeatured .productImage {
+  padding: 0;
+  transform: scale(1.06);
+}
+
+.productVisualFeatured {
+  height: clamp(220px, 22vw, 260px);
 }
 
 .productCard:hover .productImage {
@@ -538,6 +548,316 @@ a:focus-visible {
   color: var(--ink-soft);
   font-size: 16px;
   line-height: 1.75;
+}
+
+.boardInspectionSection {
+  padding-top: 82px;
+}
+
+.boardInspectionSection .sectionIntro > p:not(.eyebrow) {
+  margin: 18px 0 0;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.boardInspection {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: 22px;
+  margin-top: 42px;
+}
+
+.boardInspectionPanel {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--white);
+  box-shadow: 0 8px 24px rgba(20, 62, 98, 0.06);
+}
+
+.boardPanelHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px 18px;
+}
+
+.boardPanelHeading .productCategory {
+  margin: 0;
+}
+
+.boardPanelHeading h3 {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-size: 19px;
+  letter-spacing: -0.025em;
+}
+
+.boardPanelTag {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid rgba(33, 112, 176, 0.16);
+  border-radius: 999px;
+  background: var(--blue-pale);
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.schematicPanelActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.schematicExpandButton,
+.schematicZoomControls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--blue-deep);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.schematicExpandButton:hover,
+.schematicZoomControls button:hover:not(:disabled) {
+  border-color: #a9c9e0;
+  background: var(--blue-pale);
+}
+
+.schematicExpandButton:focus-visible,
+.schematicZoomControls button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.schematicExpandButton span {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.schematicCanvas {
+  position: relative;
+  margin: 0 14px;
+  border: 1px solid rgba(12, 79, 145, 0.12);
+  border-radius: 12px;
+  background: #fffdfa;
+}
+
+.schematicCanvas > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.schematicPoint {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  appearance: none;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.schematicPointDot {
+  width: 14px;
+  height: 14px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #1e81c6;
+  box-shadow: 0 0 0 2px #1e81c6, 0 2px 9px rgba(9, 42, 71, 0.38);
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.schematicPoint:hover .schematicPointDot,
+.schematicPoint.isActive .schematicPointDot,
+.schematicPoint:focus-visible .schematicPointDot {
+  transform: scale(1.2);
+  background: #f39b37;
+}
+
+.schematicPoint:focus-visible {
+  outline: 2px solid #f39b37;
+  outline-offset: 2px;
+}
+
+.schematicPointPopup {
+  position: absolute;
+  z-index: 5;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  display: grid;
+  gap: 6px;
+  width: min(250px, 68vw);
+  padding: 13px 15px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(12, 79, 145, 0.18);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(16, 48, 78, 0.2);
+  color: var(--ink);
+  pointer-events: none;
+  text-align: left;
+}
+
+.schematicPoint:first-of-type .schematicPointPopup {
+  left: 0;
+  transform: none;
+}
+
+.schematicPointPopup strong {
+  font-size: 13px;
+}
+
+.schematicPointPopup > span {
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.boardPanelHint,
+.boardModelDescription {
+  margin: 0;
+  padding: 15px 22px 20px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.modelPanel .pcbViewer {
+  min-height: 0;
+  height: clamp(300px, 31vw, 420px);
+  margin: 0 14px;
+  border-radius: 12px;
+}
+
+.modelPanel .boardModelDescription {
+  padding-top: 14px;
+}
+
+.schematicLightbox {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  width: min(1500px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(12, 79, 145, 0.2);
+  border-radius: 18px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgba(8, 30, 50, 0.3);
+}
+
+.schematicLightbox::backdrop {
+  background: rgba(7, 23, 38, 0.76);
+  backdrop-filter: blur(4px);
+}
+
+.schematicLightboxContent {
+  display: flex;
+  max-height: calc(100dvh - 34px);
+  flex-direction: column;
+}
+
+.schematicLightboxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.schematicLightboxHeader .productCategory {
+  margin: 0;
+}
+
+.schematicLightboxHeader h2 {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.schematicZoomControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.schematicZoomControls button {
+  min-width: 38px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.schematicZoomControls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.schematicZoomControls > span {
+  min-width: 52px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.schematicZoomControls .schematicZoomReset {
+  font-size: 12px;
+}
+
+.schematicZoomControls .schematicCloseButton {
+  width: 38px;
+  height: 38px;
+  margin-left: 5px;
+  border-color: transparent;
+  background: #f0f5f8;
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.schematicZoomStage {
+  min-height: 0;
+  margin: 18px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(12, 79, 145, 0.14);
+  border-radius: 12px;
+  background: #fffdfa;
+}
+
+.schematicCanvasZoomed {
+  min-width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
 }
 
 .pcbGrid {
@@ -660,18 +980,31 @@ a:focus-visible {
 
 .contactGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  max-width: 760px;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
 }
 
 .contactGrid .contentCard {
-  min-height: 260px;
+  min-height: 220px;
 }
 
 .contactGrid .contentCard h2 {
-  margin-top: 53px;
+  margin-top: 35px;
   font-size: 22px;
   overflow-wrap: anywhere;
+}
+
+.contactGrid .contentCard h2 a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-decoration-color: rgba(12, 79, 145, 0.28);
+  text-underline-offset: 5px;
+}
+
+.contactGrid .contentCard h2 a:hover {
+  text-decoration-color: currentColor;
 }
 
 /* Alt bilgi */
@@ -743,12 +1076,17 @@ a:focus-visible {
   .productGrid,
   .contactGrid,
   .productDetail,
+  .boardInspection,
   .pcbGrid {
     grid-template-columns: 1fr;
   }
 
   .productVisual {
     height: clamp(240px, 58vw, 320px);
+  }
+
+  .productVisualFeatured {
+    height: clamp(210px, 55vw, 250px);
   }
 
   .productDetail {
@@ -768,6 +1106,10 @@ a:focus-visible {
 
   .pcbViewer {
     min-height: 380px;
+  }
+
+  .modelPanel .pcbViewer {
+    height: clamp(320px, 75vw, 430px);
   }
 
   .footerGrid {
@@ -820,6 +1162,11 @@ a:focus-visible {
     font-size: clamp(2.1rem, 10vw, 2.5rem);
   }
 
+  .productDetailHero h1 {
+    font-size: clamp(1.7rem, 8vw, 2.5rem);
+    overflow-wrap: anywhere;
+  }
+
   .homeLogo {
     width: 172px;
     height: 172px;
@@ -848,6 +1195,88 @@ a:focus-visible {
 
   .technicalSection {
     padding-top: 60px;
+  }
+
+  .boardInspectionSection {
+    padding-top: 60px;
+  }
+
+  .boardInspection {
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .boardPanelHeading {
+    padding: 19px 18px 16px;
+  }
+
+  .schematicCanvas {
+    margin: 0 10px;
+  }
+
+  .modelPanel .pcbViewer {
+    height: 300px;
+    margin: 0 10px;
+  }
+
+  .schematicPointPopup {
+    width: min(230px, 72vw);
+  }
+
+  .schematicPanelActions {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    gap: 7px;
+  }
+
+  .schematicExpandButton {
+    min-height: 32px;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+
+  .schematicLightbox {
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+    border-radius: 12px;
+  }
+
+  .schematicLightboxContent {
+    max-height: calc(100dvh - 18px);
+  }
+
+  .schematicLightboxHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .schematicLightboxHeader h2 {
+    font-size: 17px;
+  }
+
+  .schematicZoomControls {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .schematicZoomControls button {
+    min-width: 34px;
+    min-height: 34px;
+    padding: 0 8px;
+  }
+
+  .schematicZoomControls .schematicZoomReset {
+    margin-left: auto;
+  }
+
+  .schematicZoomControls .schematicCloseButton {
+    margin-left: 0;
+  }
+
+  .schematicZoomStage {
+    margin: 10px;
   }
 
   .pcbGrid {
@@ -935,36 +1364,61 @@ a:focus-visible {
 
 .diagramPopup {
   position: absolute;
+  z-index: 30;
   left: 50%;
   bottom: calc(100% + 10px);
   transform: translateX(-50%);
-
-  width: 220px;
-  padding: 12px 14px;
-
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  width: min(290px, 70vw);
+  padding: 12px;
   background: linear-gradient(135deg, #e7f2fa, #f9fcfe);
-  border: 1px solid rgba(12, 79, 145, 0.384);
-  border-radius: 10px;
-
-  color: rgb(0, 0, 0);
-
+  border: 1px solid rgba(12, 79, 145, 0.24);
+  border-radius: 14px;
+  color: var(--ink);
   pointer-events: none;
-
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 30px rgba(16, 48, 78, 0.2);
+  text-align: left;
 }
 
-.diagramPopup strong {
+.hitbox:first-of-type .diagramPopup {
+  left: 0;
+  transform: none;
+}
+
+.hitbox:last-of-type .diagramPopup {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.diagramPopupImage {
+  width: 84px;
+  height: 72px;
+  border: 1px solid rgba(12, 79, 145, 0.12);
+  border-radius: 9px;
+  background: #fff;
+  object-fit: contain;
+}
+
+.diagramPopupCopy {
+  min-width: 0;
+}
+
+.diagramPopupCopy strong {
   display: block;
   font-size: 14px;
   margin-bottom: 5px;
 }
 
-.diagramPopup span {
+.diagramPopupDescription {
   margin: 0;
   display: block;
   font-size: 12px;
   line-height: 1.5;
-  opacity: 0.75;
+  color: var(--ink-soft);
 }
 .diagramTooltip {
   margin-top: 20px;

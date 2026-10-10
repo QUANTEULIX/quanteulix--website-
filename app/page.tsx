@@ -17,11 +17,10 @@ export default function Home() {
 
           <div className="heroMessage">
             <p className="eyebrow">2026</p>
-            <h1>QUANTEULIX
-              şuanda bakımda yapım aşamasında olan bir web sitesidir.
-            </h1>
+            <h1>QUANTEULIX</h1>
             <p>
-              GELECEĞİN TEKNOLOJİSİNİN BİR PARÇACIĞI.
+              Geleceğin teknolojisinin bir parçacığı. Web sitemiz şu anda
+              geliştirme aşamasında; çok yakında yeniden buradayız.
             </p>
           </div>
 
@@ -38,9 +37,10 @@ export default function Home() {
             </div>
             <div className="projectDescription">
               <p className="eyebrow">İMZA PROJEMİZ</p>
-              <h2>Polarizasyon Tabanlı Kuantum Mantık Demansistörü</h2>
+              <h2>Polarizasyon Tabanlı Kuantum Mantık Demonstratörü</h2>
               <p>
-                Bu alanı öne çıkarmak istediğimiz projenin ne yaptığını kısaca anlatmak için kullanak.
+                Polarizasyon ölçümlerinden açı bilgisi üretmeyi hedefleyen
+                Prototip-1 sistemimizi keşfedin.
               </p>
             </div>
           </div>
